@@ -1,7 +1,7 @@
-import * as React from 'react'
-import { Switch, Route } from 'react-router'
-import { BrowserRouter as Router } from 'react-router-dom'
-import { Authorization } from 'pages/index'
+import * as React from "react";
+import { Switch, Route } from "react-router";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Authorization } from "pages/index";
 
 export const Routes = () => {
   return (
@@ -12,5 +12,5 @@ export const Routes = () => {
         </Switch>
       </>
     </Router>
-  )
-}
+  );
+};

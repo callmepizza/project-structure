@@ -1,1 +1,1 @@
-export * from './autorization/index'
+export * from "./autorization/index";
