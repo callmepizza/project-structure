@@ -2,19 +2,33 @@ const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const { CheckerPlugin } = require('awesome-typescript-loader')
 module.exports = {
     mode: "production",
-    entry: '../src/index.tsx',
+    entry:  path.resolve(__dirname, './../src/index.tsx'),
     output: {
         filename:'static/[name].hash.js',
         path: path.resolve(__dirname, './../dist'),
-        publicPath: '/'
+        publicPath: '../'
     },
     devtool: 'source-map',
+    resolve: {
+      extensions: ['.ts', '.js', '.json', '.tsx'],
+      alias: {
+        common: path.resolve(__dirname, '../src/common/'),
+        pages: path.resolve(__dirname, '../src/pages/'),
+        abstraction: path.resolve(__dirname, '../src/abstraction/'),
+        routes: path.resolve(__dirname, '../src/routes/'),
+      },
+    },
+  
     module:{
         rules:[
-            { est: /\.ts(x?)$/,  loader: 'awesome-typescript-loader'},
+            { test: /\.ts(x?)$/,  loader: 'awesome-typescript-loader'},
+            {
+              test: /\.s[ac]ss$/i,
+              use: ['style-loader', 'css-loader', 'sass-loader'],
+            },
             {
                 test: /\.css$/,
                 use: [
@@ -53,12 +67,12 @@ module.exports = {
       },
       plugins: [
         new HtmlWebpackPlugin({
-            template: '../public/index.html',
+          template: path.resolve(__dirname, './../public/index.html'),
         }),
         
-        // Create the stylesheet under 'styles' directory
         new MiniCssExtractPlugin({
           filename: 'styles/styles.[hash].css'
-        })
+        }),
+        new CheckerPlugin(),
       ]
 }
