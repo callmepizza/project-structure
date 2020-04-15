@@ -1,4 +1,4 @@
-const { createLogger, format, transports } = require('../../libs');
+const { createLogger, format, transports } = require('winston');
 
 
 module.exports = createLogger({
@@ -18,9 +18,9 @@ module.exports = createLogger({
       level: 'info',
     }),
     new transports.File({
-      filename: './dev/loggs/winston/error.log',
+      filename: './loggs/winston/error.log',
       level: 'error',
     }),
-    new transports.File({ filename: './dev/loggs/winston/combined.log' }),
+    new transports.File({ filename: './loggs/winston/combined.log' }),
   ],
 });
