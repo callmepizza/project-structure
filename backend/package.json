@@ -4,7 +4,9 @@
   "description": "backend json",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon ./dev/index.js",
+    "server": "pm2 start ./dev/config/ecosystem.json",
+    "stop": "pm2 stop 0 && pm2 stop 1"
   },
   "author": "callmepizza",
   "license": "ISC",
@@ -38,6 +40,7 @@
     "sinon": "^7.3.2",
     "socket.io": "^2.2.0",
     "socket.io-client": "^2.2.0",
-    "uuid": "^3.3.2"
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1"
   }
 }
