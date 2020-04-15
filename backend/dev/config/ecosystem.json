@@ -1,0 +1,16 @@
+{
+  "apps": [
+    {
+      "name": "tech-store",
+      "script": "./dev/index.js",
+      "exec_mode": "cluster",
+      "instances": "2",
+      "max_memory_restart": "2G",
+      "kill_timeout": "5000",
+      "error_file": "./dev/loggs/err.log",
+      "out_file": "./dev/loggs/out.log",
+      "log_file":"./dev/loggs/combined.log",
+      "time": true
+    }
+  ]
+}
