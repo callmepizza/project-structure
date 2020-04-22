@@ -1,0 +1,20 @@
+.navigation{
+      margin-top: 10px !important;
+    .logo{
+        width: 140px !important;
+    }
+    .icon{
+        color:black !important;
+    }
+    .button{
+        background-color:rgba(69, 200, 248, 0.521) !important;
+        color:rgba(0, 0, 0, 0.938)  !important;
+        font-weight: 600 !important;
+        width: 180px !important;
+        &:active{
+            background-color:rgba(125, 220, 255, 0.993) !important;
+        }
+    }
+    
+}
+

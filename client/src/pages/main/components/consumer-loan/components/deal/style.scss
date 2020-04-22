@@ -1,0 +1,46 @@
+.form-credit-deal {
+    .toggle-client {
+        margin-top: 40px !important;
+    }
+
+    .input-summ {
+        margin-top: 40px !important;
+    }
+
+    .range-client {
+        margin-top: 40px !important;
+
+        input[type="range"] {
+            appearance: none;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 50rem;
+            border-color: rgba(0, 0, 0, 0.1);
+            padding: 3px 5px;
+        }
+
+        input[type="range"]::before {
+            content: '1 месяц';
+            font-size: 13px;
+            position: absolute;
+            top: 40px;
+        }
+
+        input[type="range"]::after {
+            content: '5 лет';
+            font-size: 13px;
+            position: absolute;
+            top: 40px;
+            left: 495px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            background-color: rgba(69, 200, 248, 0.521);
+            border-radius: 50rem;
+            height: 1.5em;
+            width: 1.5em;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.wrapper{
+  margin-top: 30px;
+    .slider{        
+        height: 500px;
+        border-radius: 5px;
+        .slick-next {
+          margin-right: 120px;
+         &::before {
+           display: none;
+         }
+       }
+       
+       .slick-prev {
+         margin-left: 100px;
+         z-index: 100;
+         &::before {
+           display: none;
+         }
+       }
+        .box{
+          border-radius: 5px;
+            img{
+                height: 500px;
+                width: 100% ;
+                border-radius: 5px;
+            }
+        }
+     }
+}

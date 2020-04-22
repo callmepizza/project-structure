@@ -1,13 +1,33 @@
 {
-  "extends": ["airbnb","prettier"],
+  "extends": ["airbnb"],
   "parser": "@typescript-eslint/parser",
+  "env": {
+    "browser": true,
+    "node": true
+  },
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
     }
   },
-  "plugins": ["@typescript-eslint","jsx-a11y"],
+  "plugins": ["@typescript-eslint", "jsx-a11y"],
   "rules": {
+    "no-else-return": ["error", {"allowElseIf": false}],
+    "import/no-default-export": "error",
+    "import/no-unresolved": 0,
+    "@typescript-eslint/no-unused-vars": [2, { "args": "none" }],
+   "import/extensions": ["error", "ignorePackages", {
+      "ts": "never",
+      "tsx": "never",
+      "js": "never",
+      "jsx": "never",
+      "mjs": "never"
+    }],
+    "import/prefer-default-export": "off",
+    "react/jsx-filename-extension": [
+      2,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
     "no-multiple-empty-lines": [
       "error",
       {
@@ -15,7 +35,21 @@
       }
     ],
     "quotes": ["error", "double"],
-    "eol-last": ["error", "never"],
-    "max-len": ["error", 120]
+    "max-len": ["error", 120],
+    "linebreak-style": ["error", "windows"]
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "extensions": [".js",".tsx",".ts"],
+        "map": [
+          ["common", "./src/common"],
+          ["pages", "./src/pages"],
+          ["abstraction", "./src/abstraction"],
+          ["routes", "./src/routes"],
+          ["assets", "./src/assets"]
+        ]
+      }
+    }
   }
 }

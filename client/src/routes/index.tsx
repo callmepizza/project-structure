@@ -1,16 +1,15 @@
 import * as React from "react";
 import { Switch, Route } from "react-router";
-import { BrowserRouter as Router } from "react-router-dom";
-import { Authorization } from "pages/index";
+import { BrowserRouter as Router, Redirect } from "react-router-dom";
+import { MainPage } from "pages/index";
 
 export const Routes = () => {
   return (
     <Router>
-      <>
-        <Switch>
-          <Route exact path="/" component={Authorization} />
-        </Switch>
-      </>
+      <Redirect to="/main" />
+      <Switch>
+        <Route exact path="/main" component={MainPage} />
+      </Switch>
     </Router>
   );
 };

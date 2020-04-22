@@ -1,13 +1,12 @@
-const commonPaths = require('./common-path')
-const CircularDependencyPlugin = require('circular-dependency-plugin')
+const commonPaths = require('./common-path');
+const CircularDependencyPlugin = require('circular-dependency-plugin');
 // Plagin speed test bundle
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
-const path = require('path')
-const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin')
-const smp = new SpeedMeasurePlugin()
-const port = process.env.PORT || 3000
+// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+const { UnusedFilesWebpackPlugin } = require('unused-files-webpack-plugin');
+// const smp = new SpeedMeasurePlugin();
+const port = process.env.PORT || 3000;
 
-const config = smp.wrap({
+const config = {
   mode: 'development',
   entry: [`${commonPaths.appEntry}/index.tsx`],
   output: {
@@ -31,15 +30,13 @@ const config = smp.wrap({
       },
     ],
   },
-  plugins: [
-    new CircularDependencyPlugin(),
-  ],
+  plugins: [new CircularDependencyPlugin()],
   devServer: {
     host: 'localhost',
     port: port,
     historyApiFallback: true,
     open: true,
   },
-})
+};
 
-module.exports = config
+module.exports = config;

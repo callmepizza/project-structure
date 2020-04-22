@@ -6,9 +6,15 @@
         "pages":["./src/pages/*"] ,
         "abstraction":["./src/abstraction/*"],
         "routes":["./src/routes/*"] ,
+        "assets":["./src/assets/*"] ,
       },
+      "typeRoots": [
+        "./node_modules/@types",
+        "./typings/*.d.ts"
+    ],
+    
       "importHelpers": true,
-      "module": "commonjs",
+      "module": "es6",
       "target": "es5",
       "allowJs": true,
       "checkJs": false,
@@ -22,6 +28,9 @@
       "esModuleInterop": true,
       "outDir": "./dist/",
   },
+  "include": [
+    "./typings/index.d.ts"
+],
   "exclude": [
       "node_modules"
   ]

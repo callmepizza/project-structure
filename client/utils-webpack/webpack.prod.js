@@ -1,6 +1,7 @@
-const commonPaths = require('./common-path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
+const commonPaths = require('./common-path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
+
 const config = {
   mode: 'production',
   entry: [`${commonPaths.appEntry}/index.tsx`],
@@ -10,24 +11,6 @@ const config = {
   devtool: 'source-map',
   module: {
     rules: [
-      {
-        test: /\.(png|jpg|jpeg|gif|ico|svg|webp)$/,
-        loader: 'url-loader',
-        options: {
-          name: 'images/[name].[hash:8].[ext]',
-          publicPath: '/dist/',
-          limit: 4096,
-        },
-      },
-      {
-        test: /\.(woff|woff2|ttf|eot|otf)$/,
-        loader: 'url-loader',
-        options: {
-          name: 'fonts/[name].[hash:8].[ext]',
-          publicPath: '/dist/',
-          limit: 4096,
-        },
-      },
       {
         test: /\.css$/,
         use: [
@@ -65,6 +48,6 @@ const config = {
       filename: 'styles/styles.[hash].css',
     }),
   ],
-}
+};
 
-module.exports = config
+module.exports = config;
