@@ -35,12 +35,17 @@ const config = {
         options: {
           name: '[name].[contenthash].[ext]',
           outputPath: 'assets/img',
-          esModule: false 
-        }
+          esModule: false,
+        },
       },
       {
         test: /\.s[ac]ss$/i,
-        use: ['style-loader', 'css-loader','postcss-loader', 'sass-loader' ],
+        use: [
+          'style-loader',
+          'postcss-loader',
+          'resolve-url-loader',
+          'sass-loader',
+        ],
       },
     ],
   },

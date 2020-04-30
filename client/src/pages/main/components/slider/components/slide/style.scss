@@ -1,0 +1,54 @@
+.slide {
+    display: flex;
+    flex-flow: row nowrap;
+    background-color: rgba(69, 200, 248, 0.521);
+
+    .image-block {
+        width: 900px;
+
+        img {
+
+            height: 500px;
+        }
+
+    }
+
+    .text-slide {
+        p {
+            padding-top: 60px;
+            padding-left: 50px;
+            font-size: 15px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            padding-top: 20px;
+            padding-left: 50px;
+            font-size: 60px;
+            line-height: 1.2;
+            width: 600px;
+
+
+        }
+    }
+
+    .button-slide {
+        box-shadow: 5px 5px 39px -5px rgba(0, 0, 0, 0.49) !important;
+        width: 200px !important;
+        margin-left: 55px !important;
+        margin-top: 40px !important;
+        height: 50px;
+        text-transform: uppercase !important;
+        border: 2px solid rgba(0, 0, 0, 0.808) !important;
+        background-color: transparent !important;
+        color: black !important;
+        letter-spacing: 2px !important;
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.856) !important;
+            color: #fff !important;
+            letter-spacing: 2px !important;
+            font-weight: 400 !important;
+        }
+    }
+}

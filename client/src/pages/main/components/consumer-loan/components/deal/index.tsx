@@ -12,27 +12,13 @@ const count = 1;
 
 export const ConsumerDeal = () => {
   const [dateStart, changeDate] = useState<number>(count);
-  const handleChange = (e: MouseEvent, { name, value }: IConsumerDeal) =>
-    changeDate(([name] = value));
+  const handleChange = (e: MouseEvent, { name, value }: IConsumerDeal) => changeDate(([name] = value));
 
   return (
     <Grid.Column>
       <Form className="form-credit-deal">
-        <Form.Checkbox
-          className="toggle-client"
-          toggle
-          label="Зарплатный клиент"
-          width="12"
-        />
-
-        <Form.Input
-          className="input-summ"
-          label="Сумма"
-          size="small"
-          width="12"
-          error="dsd"
-        />
-
+        <Form.Checkbox className="toggle-client" toggle label="Зарплатный клиент" width="12" name="payroll client" />
+        <Form.Input className="input-summ" label="Сумма" size="large" width="12" name="summ" />
         <Form.Input
           className="range-client"
           label={`Срок ${mapper(dateStart)}`}
@@ -43,7 +29,8 @@ export const ConsumerDeal = () => {
           onChange={handleChange}
           type="range"
           value={dateStart}
-          fluid
+          width="12"
+          size="large"
         />
       </Form>
     </Grid.Column>

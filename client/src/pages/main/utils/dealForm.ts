@@ -25,9 +25,7 @@ const mapperMonth = (month: number): string => {
  *  @returns boolean
  */
 
-const monthZero = (date: number): boolean => {
-  return date % 12 === 0;
-};
+const monthZero = (date: number): boolean => date % 12 === 0;
 
 /**
  *  Проверка месяца
@@ -64,6 +62,6 @@ export const mapper = (date: number): any => {
     return `4 года и ${date % 12}  ${mapperMonth(date % 12)} `;
   }
   if (date >= 60) {
-    return `5 лет `;
+    return "5 лет ";
   }
 };

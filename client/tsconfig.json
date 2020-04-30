@@ -1,12 +1,11 @@
 {
   "compilerOptions": {
-      "baseUrl": "./src",
-      "paths":{
-        "common":["./src/common/*"],
-        "pages":["./src/pages/*"] ,
-        "abstraction":["./src/abstraction/*"],
-        "routes":["./src/routes/*"] ,
-        "assets":["./src/assets/*"] ,
+      "baseUrl": "./",
+      "paths": {
+        "*": [
+          "*",
+          "./src/*",
+        ]
       },
       "typeRoots": [
         "./node_modules/@types",
@@ -27,9 +26,19 @@
       "moduleResolution": "node",
       "esModuleInterop": true,
       "outDir": "./dist/",
+      "declaration": true,
+      "noImplicitAny": false,
+      "experimentalDecorators": true,
+      "allowSyntheticDefaultImports": true,
+      "alwaysStrict": true,
+      "preserveConstEnums": true,
+      "keyofStringsOnly": true,
+      "sourceMap": true,
   },
   "include": [
-    "./typings/index.d.ts"
+    "./typings/index.d.ts",
+    "@types/**/*.d.ts",
+    "src/**/*.ts"
 ],
   "exclude": [
       "node_modules"

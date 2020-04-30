@@ -9,22 +9,8 @@ interface ICustomIconProps {
   onClick?: () => void;
 }
 
-export const CustomIcon = ({
-  className,
-  name,
-  fill = "black",
-  size = "24px",
-  onClick,
-}: ICustomIconProps) => {
-  return (
-    <svg
-      className={`${className}`}
-      fill={fill}
-      width={size}
-      height={size}
-      onClick={onClick}
-    >
-      <use xlinkHref={`${Icons}#icon-${name}`} />
-    </svg>
-  );
-};
+export const CustomIcon = ({ className, name, fill = "black", size = "24px", onClick }: ICustomIconProps) => (
+  <svg className={`${className}`} fill={fill} width={size} height={size} onClick={onClick}>
+    <use xlinkHref={`${Icons}#icon-${name}`} />
+  </svg>
+);

@@ -30,7 +30,7 @@ const config = {
       },
     ],
   },
-  plugins: [new CircularDependencyPlugin()],
+  plugins: [new CircularDependencyPlugin({ exclude: /node_modules/ })],
   devServer: {
     host: 'localhost',
     port: port,

@@ -8,23 +8,17 @@ interface ICustomCardProps {
   discription: string;
 }
 
-export const CustomCard = ({
-  image,
-  title,
-  discription,
-}: ICustomCardProps): JSX.Element => {
-  return (
-    <Grid.Column className="card">
-      <div className="wrapper-card">
-        <div className="image-card">
-          <Image src={image} />
-        </div>
-        <div>
-          <h3 className="title">{title}</h3>
-          <p className="discription">{discription}</p>
-        </div>
+export const CustomCard = ({ image, title, discription }: ICustomCardProps): JSX.Element => (
+  <Grid.Column className="card">
+    <div className="wrapper-card">
+      <div className="image-card">
+        <Image src={image} />
       </div>
-      <Button className="custom-button-card">Оформить</Button>
-    </Grid.Column>
-  );
-};
+      <div>
+        <h3 className="title">{title}</h3>
+        <p className="discription">{discription}</p>
+      </div>
+    </div>
+    <Button className="custom-button-card">Оформить</Button>
+  </Grid.Column>
+);
