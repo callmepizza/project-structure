@@ -70,6 +70,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
+    "koa-joi-swagger-ts": "^1.2.2",
     "react": "^16.13.1",
     "react-delay-render": "^0.1.2",
     "react-dom": "^16.13.1",
